@@ -27,18 +27,18 @@ This repo ships with a workflow at
 [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) that
 builds and publishes the site automatically.
 
-### Automatic (recommended)
+### Automatic with GitHub Actions (recommended)
 
-1. Get this branch onto `main` (open a PR and merge, or push to `main`).
-2. The **Deploy to GitHub Pages** workflow runs on every push to `main`. It
-   uses `actions/configure-pages` with `enablement: true`, which turns Pages on
-   for you and sets the source to **GitHub Actions**.
-3. Watch it in the **Actions** tab. When it finishes, the live URL is shown in
-   the run summary (and under **Settings → Pages**).
+One quick switch is needed before the first deploy:
 
-> If the workflow can't auto-enable Pages (some org policies block it), open
-> **Settings → Pages**, set **Source = GitHub Actions**, then re-run the
-> workflow from the **Actions** tab.
+1. Open **Settings → Pages** and set **Source = GitHub Actions**. GitHub
+   doesn't allow the Actions token to enable Pages on its own, so this single
+   click has to be done by hand the first time.
+2. Run the **Deploy to GitHub Pages** workflow — re-run it from the **Actions**
+   tab, or push any change. It runs automatically on every push to `main` or
+   `claude/affectionate-cerf-kd83ex`.
+3. When the run finishes, the live URL appears in the run summary and under
+   **Settings → Pages**.
 
 ### Manual alternative (deploy from a branch)
 
